@@ -1,4 +1,4 @@
-package modul_1;
+package praktikum_1.Latihan;
 
 public class Latihan_while_5 {
     public static void main (String[] args) {

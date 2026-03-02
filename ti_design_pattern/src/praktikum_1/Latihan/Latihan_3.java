@@ -1,6 +1,4 @@
-package modul_1;
-
-import java.util.Scanner;
+package praktikum_1.Latihan;
 
 public class Latihan_3 {
     public static void main (String[] args){

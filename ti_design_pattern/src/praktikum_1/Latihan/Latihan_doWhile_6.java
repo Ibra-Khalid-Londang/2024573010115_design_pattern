@@ -1,4 +1,4 @@
-package modul_1;
+package praktikum_1.Latihan;
 
 public class Latihan_doWhile_6 {
     public static void main (String[] args) {
