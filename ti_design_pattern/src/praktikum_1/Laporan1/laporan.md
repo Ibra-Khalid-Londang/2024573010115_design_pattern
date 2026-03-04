@@ -427,7 +427,7 @@ public class Segitiga {
 ![](gambar/img10.png)
 
 
-##Penutup
+## Penutup
 Dengan menyelesaikan modul ini, Anda telah mempelajari dasar-dasar pemrograman Java dan mampu membuat program sederhana. Lanjutkan dengan mempelajari konsep pemrograman yang lebih kompleks seperti array, method, dan pemrograman berorientasi objek
 
 
