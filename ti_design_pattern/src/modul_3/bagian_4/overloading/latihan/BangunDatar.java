@@ -7,16 +7,6 @@ class BangunDatar {
 }
 
 // Subclass Persegi
-class Persegi extends BangunDatar {
-    private double sisi;
 
-    public Persegi(double sisi) {
-        this.sisi = sisi;
-    }
 
-    @Override
-    public void hitungLuas() {
-        double luas = sisi * sisi;
-        System.out.println("Luas Persegi: " + luas);
-    }
-}
+
