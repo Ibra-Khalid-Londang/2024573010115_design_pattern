@@ -48,7 +48,7 @@ public class Main {
 ````
 
 Output:
-![img.png](img.png)
+![img.png](../../modul_2/gambar/1.png)
 
 
 
@@ -91,7 +91,7 @@ public class Main {
 
 
 Output:
-![img_1.png](img_1.png)
+![img_1.png](../../modul_2/gambar/2.png)
 
 
 ## 3. Akses Modifier
@@ -141,7 +141,7 @@ public class Main {
 
 
 Output:
-![img_2.png](img_2.png)
+![img_2.png](../../modul_2/gambar/3.png)
 
 
 
@@ -191,7 +191,7 @@ public class Main {
 
 
 Output:
-![img_3.png](img_3.png)
+![img_3.png](../../modul_2/gambar/4.png)
 
 
 
@@ -252,7 +252,7 @@ public class Main {
 ````
 
 Output:
-![img_4.png](img_4.png)
+![img_4.png](../../modul_2/gambar/5.png)
 
 
 
@@ -441,7 +441,7 @@ public class Main {
 
 
 Output:
-![img_5.png](img_5.png)
+![img_5.png](../../modul_2/gambar/6.png)
 
 
 
