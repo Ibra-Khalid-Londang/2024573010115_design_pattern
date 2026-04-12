@@ -5,12 +5,483 @@
 
 ---
 
+# Praktikum 2: Review Konsep Dasar OOP Menggunakan Java
 
-## Praktikum: Review 4 Pilar OOP Menggunakan Java
+## 1. Class dan Object
+   Class adalah blueprint atau cetakan untuk membuat objek. Class mendefinisikan atribut (variabel) dan method (fungsi) yang dimiliki oleh objek.
+   Object adalah instance dari class. Object memiliki state (nilai dari atribut) dan behavior (method).
+   
+### Langkah Praktikum
+- Buka project pada praktikum sebelumnya menggunakan intellij IDEA 
+- Buat sebuah package baru di dalam folder src dengan cara klik kanan pada folder src kemudian pilih New -> Package. Beri nama modul_2. 
+- Buat Sebuah package baru lagi didalam package modul_2 dengan cara klik kanan dan pilih New -> Package. Beri nama bagian_1 
+- Kemudian buat sebuah class baru dengan nama Mahasiswa dan isikan kode berikut:
+
+````declarative
+package modul_2.bagian_1;
+
+public class Mahasiswa {
+    String nama;
+    int umur;
+}
+
+````
+
+
+````declarative
+package modul_2.bagian_1;
+
+public class Main {
+    public static void main(String[] args) {
+        // Membuat object dari class Mahasiswa
+        Mahasiswa mhs1 = new Mahasiswa();
+
+        // Mengisi nilai atribut
+        mhs1.nama = "Budi";
+        mhs1.umur = 20;
+
+        // Menampilkan nilai atribut
+        System.out.println("Nama: " + mhs1.nama);
+        System.out.println("Umur: " + mhs1.umur);
+    }
+}
+````
+
+Output:
+![img.png](img.png)
 
 
 
-### cBagian 1 - Pengenalan OOP dan Class-Object
+## 2. Attribute dan Method
+   Attribute adalah variabel yang dimiliki oleh class atau object.
+   Method adalah fungsi atau perilaku yang dimiliki oleh class atau object.
+   
+### Langkah Praktikum
+- Buat Sebuah package baru lagi didalam package modul_2 dengan cara klik kanan dan pilih New -> Package. Beri nama bagian_2 
+- Kemudian buat sebuah class baru dengan nama Kalkulator dan isikan kode berikut:
+
+
+````declarative
+package modul_2.bagian_2;
+
+public class Kalkulator {
+    int angka1;
+    int angka2;
+
+    int tambah(){
+        return angka1 + angka2;
+    }
+}
+
+````
+
+````declarative
+package modul_2.bagian_2;
+
+public class Main {
+    public static void main(String[] args) {
+        Kalkulator kalkulator = new Kalkulator();
+        kalkulator.angka1 = 5;
+        kalkulator.angka2 = 10;
+
+        System.out.println("Hasil Penjumlahan: " + kalkulator.tambah());
+    }
+}
+````
+
+
+Output:
+![img_1.png](img_1.png)
+
+
+## 3. Akses Modifier
+   1. Akses Modifier menentukan tingkat akses dari class, atribut, atau method.
+   2. Jenis akses modifier:
+   - public : Dapat diakses dari mana saja.
+   - private : Hanya dapat diakses dalam class yang sama.
+   - protected : Dapat diakses dalam package yang sama dan subclass.
+   - default : Hanya dapat diakses dalam package yang sama.
+  
+### Langkah Praktikum
+   1. Buat Sebuah package baru lagi didalam package modul_2 dengan cara klik kanan dan pilih New -> Package. Beri nama bagian_3
+   2. Kemudian buat sebuah class baru dengan nama AksesModifier dan isikan kode berikut:
+
+
+````declarative
+package modul_2.bagian_3;
+
+public class AccesModifier {
+    public int publicVar = 1;
+    private int privateVar = 2;
+    protected int protectedVar = 3;
+    int defaultVar = 4; // default
+
+    public void tampilkan() {
+        System.out.println("Public: " + publicVar);
+        System.out.println("Private: " + privateVar);
+        System.out.println("Protected: " + protectedVar);
+        System.out.println("Default: " + defaultVar);
+    }
+}
+````
+
+
+````declarative
+package modul_2.bagian_3;
+
+public class Main {
+    public static void main(String[] args) {
+        AccesModifier contoh = new AccesModifier();
+        contoh.tampilkan();
+
+        // System.out.println(contoh.privateVar); // Error: privateVar tidak dapat diakses
+    }
+}
+````
+
+
+Output:
+![img_2.png](img_2.png)
+
+
+
+
+
+## 4. Setter dan Getter
+   1. Setter adalah method untuk mengubah nilai atribut.
+   2. Getter adalah method untuk mengambil nilai atribut.
+   3. Setter dan Getter digunakan untuk mengakses atribut yang memiliki akses modifier private.
+   
+
+### Langkah Praktikum
+   1. Buat Sebuah package baru lagi didalam package modul_2 dengan cara klik kanan dan pilih New -> Package. Beri nama bagian_4
+   2. Kemudian buat sebuah class baru dengan nama Mobil dan isikan kode berikut:
+
+
+````declarative
+package modul_2.bagian_4;
+
+public class Mobil {
+    private String merk;
+
+    // Setter
+    public void setMerk(String merk) {
+        this.merk = merk;
+    }
+
+    // Getter
+    public String getMerk() {
+        return merk;
+    }
+}
+````
+
+````declarative
+package modul_2.bagian_4;
+
+public class Main {
+    public static void main(String[] args) {
+        Mobil mobil = new Mobil();
+        mobil.setMerk("Toyota");
+
+        System.out.println("Merk Mobil: " + mobil.getMerk());
+    }
+}
+````
+
+
+Output:
+![img_3.png](img_3.png)
+
+
+
+
+## 5. Constructor
+   1. Constructor adalah method khusus yang dipanggil saat object dibuat.
+   2. Jenis constructor:
+
+   - Default Constructor : Tanpa parameter.
+   - Parameterized Constructor : Dengan parameter.
+   - Constructor Overloading : Beberapa constructor dengan parameter berbeda.
+   
+   
+### Langkah Praktikum
+   1. Buat Sebuah package baru lagi didalam package modul_2 dengan cara klik kanan dan pilih New -> Package. Beri nama bagian_5
+   2. Kemudian buat sebuah class baru dengan nama Person dan isikan kode berikut:
+
+
+````declarative
+package modul_2.bagian_5;
+
+public class Person {
+    private String nama;
+    private int umur;
+
+    // Default Constructor
+    public Person() {
+        nama = "Unknown";
+        umur = 0;
+    }
+
+    // Parameterized Constructor
+    public Person(String nama, int umur) {
+        this.nama = nama;
+        this.umur = umur;
+    }
+
+    // Method
+    public void tampilkanInfo() {
+        System.out.println("Nama: " + nama);
+        System.out.println("Umur: " + umur);
+    }
+}
+````
+
+````declarative
+package modul_2.bagian_5;
+
+public class Main {
+    public static void main(String[] args) {
+        Person person1 = new Person();
+        Person person2 = new Person("Budi", 25);
+
+        person1.tampilkanInfo();
+        person2.tampilkanInfo();
+    }
+}
+````
+
+Output:
+![img_4.png](img_4.png)
+
+
+
+## 6. Sistem Manajemen Perpustakaan Sederhana
+   Berikut adalah contoh program konsol sederhana yang mengimplementasikan seluruh konsep yang telah dibahas sebelumnya, yaitu class, object, attribute, method, akses modifier, setter-getter, dan constructor. Program ini adalah sistem manajemen perpustakaan sederhana yang memungkinkan pengguna untuk menambahkan buku, menampilkan daftar buku, dan mencari buku berdasarkan judul.
+
+### Langkah Praktikum
+1. Buat Sebuah package baru lagi didalam package modul_2 dengan cara klik kanan dan pilih New -> Package. Beri nama bagian_6
+2. Kemudian buat sebuah class baru dengan nama Buku dan isikan kode berikut:
+
+
+````declarative
+package modul_2.bagian_6;
+
+public class Buku {
+    // Atribut (private)
+    private String judul;
+    private String pengarang;
+    private int tahunTerbit;
+
+    // Constructor (default)
+    public Buku() {
+        this.judul = "Unknown";
+        this.pengarang = "Unknown";
+        this.tahunTerbit = 0;
+    }
+
+    // Constructor (parameterized)
+    public Buku(String judul, String pengarang, int tahunTerbit) {
+        this.judul = judul;
+        this.pengarang = pengarang;
+        this.tahunTerbit = tahunTerbit;
+    }
+
+    // Setter dan Getter
+    public void setJudul(String judul) {
+        this.judul = judul;
+    }
+
+    public String getJudul() {
+        return judul;
+    }
+
+    public void setPengarang(String pengarang) {
+        this.pengarang = pengarang;
+    }
+
+    public String getPengarang() {
+        return pengarang;
+    }
+
+    public void setTahunTerbit(int tahunTerbit) {
+        this.tahunTerbit = tahunTerbit;
+    }
+
+    public int getTahunTerbit() {
+        return tahunTerbit;
+    }
+
+    // Method untuk menampilkan informasi buku
+    public void tampilkanInfo() {
+        System.out.println("Judul: " + judul);
+        System.out.println("Pengarang: " + pengarang);
+        System.out.println("Tahun Terbit: " + tahunTerbit);
+        System.out.println("------------------------------------");
+    }
+}
+````
+
+
+````declarative
+package modul_2.bagian_6;
+
+import java.util.ArrayList;
+
+public class Perpustakaan {
+    // Atribut (private)
+    private ArrayList<Buku> daftarBuku;
+
+    // Constructor
+    public Perpustakaan() {
+        daftarBuku = new ArrayList<>();
+    }
+
+    // Method untuk menambahkan buku
+    public void tambahBuku(Buku buku) {
+        daftarBuku.add(buku);
+        System.out.println("Buku berhasil ditambahkan!");
+    }
+
+    // Method untuk menampilkan semua buku
+    public void tampilkanSemuaBuku() {
+        if (daftarBuku.isEmpty()) {
+            System.out.println("Tidak ada buku dalam perpustakaan.");
+        } else {
+            System.out.println("Daftar Buku:");
+            for (Buku buku : daftarBuku) {
+                buku.tampilkanInfo();
+            }
+        }
+    }
+
+    // Method untuk mencari buku berdasarkan judul
+    public void cariBuku(String judul) {
+        boolean ditemukan = false;
+        for (Buku buku : daftarBuku) {
+            if (buku.getJudul().equalsIgnoreCase(judul)) {
+                System.out.println("Buku ditemukan:");
+                buku.tampilkanInfo();
+                ditemukan = true;
+                break;
+            }
+        }
+        if (!ditemukan) {
+            System.out.println("Buku dengan judul \"" + judul + "\" tidak ditemukan.");
+        }
+    }
+}
+````
+
+
+````declarative
+package modul_2.bagian_6;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Perpustakaan perpustakaan = new Perpustakaan();
+        int pilihan;
+
+        do {
+            // Menu
+            System.out.println("\n=== Sistem Manajemen Perpustakaan ===");
+            System.out.println("1. Tambah Buku");
+            System.out.println("2. Tampilkan Semua Buku");
+            System.out.println("3. Cari Buku");
+            System.out.println("4. Keluar");
+            System.out.print("Pilih menu: ");
+            pilihan = scanner.nextInt();
+            scanner.nextLine(); // Membersihkan newline
+
+            switch (pilihan) {
+                case 1:
+                    // Tambah Buku
+                    System.out.print("Masukkan judul buku: ");
+                    String judul = scanner.nextLine();
+                    System.out.print("Masukkan nama pengarang: ");
+                    String pengarang = scanner.nextLine();
+                    System.out.print("Masukkan tahun terbit: ");
+                    int tahunTerbit = scanner.nextInt();
+                    scanner.nextLine(); // Membersihkan newline
+
+                    Buku bukuBaru = new Buku(judul, pengarang, tahunTerbit);
+                    perpustakaan.tambahBuku(bukuBaru);
+                    break;
+
+                case 2:
+                    // Tampilkan Semua Buku
+                    perpustakaan.tampilkanSemuaBuku();
+                    break;
+
+                case 3:
+                    // Cari Buku
+                    System.out.print("Masukkan judul buku yang dicari: ");
+                    String judulCari = scanner.nextLine();
+                    perpustakaan.cariBuku(judulCari);
+                    break;
+
+                case 4:
+                    // Keluar
+                    System.out.println("Terima kasih telah menggunakan sistem ini!");
+                    break;
+
+                default:
+                    System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+            }
+        } while (pilihan != 4);
+
+        scanner.close();
+    }
+}
+````
+
+
+
+Output:
+![img_5.png](img_5.png)
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Praktikum 3: Review 4 Pilar OOP Menggunakan Java
+
+
+
+## Bagian 1 - Pengenalan OOP dan Class-Object
 OOP (Object-Oriented Programming) adalah paradigma pemrograman yang menggunakan "objek" untuk merepresentasikan data dan metode yang beroperasi pada data tersebut. Konsep dasar OOP:
 
 1. Class: Blueprint atau template untuk membuat objek.
@@ -57,7 +528,7 @@ public class Main {
 
 4. Jalankan program
 
-### Bagian 2 - Encapsulation (Enkapsulasi)
+## Bagian 2 - Encapsulation (Enkapsulasi)
 Encapsulation adalah konsep menyembunyikan detail internal objek dan hanya mengekspos fungsionalitas yang diperlukan. Ini dilakukan dengan menggunakan access modifier (private, public, protected) dan getter-setter.
 
 Langkah Praktikum
@@ -115,7 +586,7 @@ Output:
 
 
 
-### Bagian 3 - Inheritance (Pewarisan) dan Composition (Komposisi)
+## Bagian 3 - Inheritance (Pewarisan) dan Composition (Komposisi)
 Dalam pemrograman berorientasi objek (OOP), Inheritance dan Composition adalah dua konsep penting yang digunakan untuk membangun hubungan antara class. Meskipun keduanya memiliki tujuan yang sama, yaitu mempromosikan reuseability (penggunaan kembali kode) dan modularitas, mereka memiliki pendekatan yang berbeda. Berikut adalah penjelasan lengkap tentang Composition dan perbandingannya dengan Inheritance.
 
 #### Inheritance (Pewarisan)
@@ -254,7 +725,7 @@ Output:
 ![img.png](gambar/img2.png)
 
 
-### Bagian 4 - Polymorphism (Polimorfisme)
+## Bagian 4 - Polymorphism (Polimorfisme)
 Polymorphism memungkinkan objek untuk memiliki banyak bentuk. Ini dapat dicapai melalui method overriding (mengganti metode di subclass) dan method overloading (beberapa metode dengan nama sama tetapi parameter berbeda).
 
 #### Method Overriding
@@ -383,7 +854,7 @@ Output:
 ![img_1.png](gambar/img4.png)
 
 
-### Bagian 5 - Abstraction (Abstraksi) | Abstract Class dan Interface
+## Bagian 5 - Abstraction (Abstraksi) | Abstract Class dan Interface
 Pada konsep OOP (Object-Oriented Programming), Abstraction adalah salah satu dari empat pilar utama (bersama Encapsulation, Inheritance, dan Polymorphism). Abstraction memungkinkan kita untuk menyembunyikan detail implementasi dan hanya menampilkan fungsionalitas yang diperlukan kepada pengguna. Di Java, abstraction dapat diimplementasikan menggunakan Abstract Class dan Interface.
 
 #### Abstract Class
@@ -550,7 +1021,7 @@ Output:
 ![img_3.png](gambar/img6.png)
 
 
-### Bagian 6 - Aplikasi Console Pemesanan Tiket Sederhana
+## Bagian 6 - Aplikasi Console Pemesanan Tiket Sederhana
 Berikut adalah contoh aplikasi console pemesanan tiket untuk sebuah konferensi yang mengimplementasikan seluruh konsep OOP (Class, Object, Encapsulation, Inheritance, Polymorphism, dan Abstraction). Aplikasi ini memiliki fitur lengkap seperti:
 
 #### Menampilkan daftar tiket yang tersedia.
