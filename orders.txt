@@ -1,0 +1,3 @@
+zone - 333 - Rp666000.0
+handuk - 700 - Rp2.38E7
+handuk - 20 - Rp600000.0
